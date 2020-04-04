@@ -1,30 +1,7 @@
 #include<iostream>
 using namespace std;
 
-// //Simple program to get digonal elements in matrix
 
-// //getting the digonal element utilising space 
-// void set(int a[],int i,int j, int x)
-// {
-// 	if(i==j)
-// 		a[i-1]=x;
-// }
-// //show the element at position
-// void get(int a[],int i,int j)
-// {
-// 	if(i==j)
-// 		cout<<a[i-1];
-// }
-
-// int main()
-// {
-// 	int a[100];
-// 	int i,j,x;
-// 	set(a,1,1,5);
-// 	get(a,1,1);
-
-
-// }
 class Diagonal
 {
 private:
@@ -32,16 +9,10 @@ private:
 	int *A;
 
 public:
-	Diagonal()
-	{
-		n=2;
-		A=new int[2*(2+1)/2];
-
-	}
 	Diagonal(int n)
 	{
 		this->n=n;
-		A=new int[n*(n+1)/2];
+		A=new int[n];
 
 	}
 	void set(int i,int j, int x);
