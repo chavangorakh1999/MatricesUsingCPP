@@ -32,12 +32,12 @@ public:
 void LowerTriangular::set(int i,int j,int x)
 {
 	if(i>=j)
-		A[i*(i-1)/2+(j-1)]=x;
+		A[n*(j-1)-(j-2)*(j-1)/2+i-j]=x;
 }
 int LowerTriangular::get(int i,int j)
 {
 	if(i>=j)
-		return A[i*(i-1)/2+(j-1)];
+		return A[n*(j-1)-(j-2)*(j-1)/2+i-j];
 	else return 0;
 }
 void LowerTriangular::display()
@@ -47,7 +47,7 @@ void LowerTriangular::display()
 		for(int j=1;j<=n;j++)
 		{
 			if(i>=j)
-				cout<<A[i*(i-1)/2+(j-1)]<<" ";
+				cout<<A[n*(j-1)-(j-2)*(j-1)/2+i-j]<<" ";
 			else
 				cout<<"0"<<" ";
 		}
