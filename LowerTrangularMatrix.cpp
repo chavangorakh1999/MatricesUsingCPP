@@ -2,20 +2,20 @@
 using namespace std;
 
 
-class LowerTriangular
+class LowerTriangularMatrix
 {
 private:
 	int n;
 	int *A;
 
 public:
-	LowerTriangular()
+	LowerTriangularMatrix()
 	{
 		n=2;
 		A=new int[2*(2+1)/2];
 
 	}
-	LowerTriangular(int n)
+	LowerTriangularMatrix(int n)
 	{
 		this->n=n;
 		A=new int[n*(n+1)/2];
@@ -24,23 +24,23 @@ public:
 	void set(int i,int j, int x);
 	int get(int i, int j);
 	void display();
-	~LowerTriangular()
+	~LowerTriangularMatrix()
 	{
 		delete []A;
 	};
 };
-void LowerTriangular::set(int i,int j,int x)
+void LowerTriangularMatrix::set(int i,int j,int x)
 {
 	if(i>=j)
 		A[i*(i-1)/2+(j-1)]=x;
 }
-int LowerTriangular::get(int i,int j)
+int LowerTriangularMatrix::get(int i,int j)
 {
 	if(i>=j)
 		return A[i*(i-1)/2+(j-1)];
 	else return 0;
 }
-void LowerTriangular::display()
+void LowerTriangularMatrix::display()
 {
 	for(int i=1;i<=n;i++)
 	{
@@ -62,7 +62,7 @@ int main()
 	int d;
 	cout<<"Enter Dimension:";
 	cin>>d;
-	LowerTriangular lt(d);
+	LowerTriangularMatrix lt(d);
 	
 	int x;
 	cout<<"Enter Elements:"<<endl;
